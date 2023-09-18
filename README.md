@@ -11,5 +11,5 @@ The general format:
 **MAJOR.MINOR.PATCH**, eg. `1.0.1`
 
 - **MAJOR** MAJOR version when you make incompatible API changes
-- **MAJOR** MINOR version when you add functionality in a backward compatible manner
-- **MAJOR** PATCH version when you make backward compatible bug fixes
+- **MINOR** MINOR version when you add functionality in a backward compatible manner
+- **PATCH** PATCH version when you make backward compatible bug fixes
