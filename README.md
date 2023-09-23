@@ -134,26 +134,24 @@ if you want to Env Vars to persist across all future bash terminals that you are
 #### Presisting Env Vars in Gitpod
 
 We can persist env vars into gitpod by storing them in Gitpod secrets storage. 
-``` 
+```sh
 gp env HELLOW=`world`
-
+``` 
 All future workspcaes lunched will set the env vars for all bash terminal opened in those workspaces.
 
 You can also set env vars in the `.gitpod.yml` but this can only contain non-sensitive env vars.
-
 
 ### AWS CLI Installation
 
 AWS CLI installed for the project via the bash script [`./bin/instakk_aws_cli`](./bin/install_aws_cli)
 
-[Getting started Install (AWS CLI)] (https://docs.
+[Getting started Install (AWS CLI)](https://docs.
 aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 We can check if our AWS creswntials is configured correctly by running the following AWS CLl command 
 
-
 ```sh
-aws sts get-caller-identity
+aws sts get-caller-identity'
 ```
 
 if it succesful you see json payload return that looks like this:
@@ -167,6 +165,55 @@ if it succesful you see json payload return that looks like this:
 ```
 
     We'll need to generate AWS CLI credits from IAM User in order to the user AWS CLI
+
+## Terraform Basics 
+
+### Terraform Registrey 
+
+Terraform sources their providers and modules from terraform which is loacted  at [registry.terraform.io](https://registry.terraform.io/)
+
+- **providers** is an interface to API that will allow to create resources in terraform.
+- **modules** are a way to make to  make large amount of terraform code modular,portable and sharable. 
+
+[Random Terraform Proviedr](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+### Terraform Console 
+
+We can see a list of all the terraform commands by simply `terraform`
+
+#### Terraform Init 
+
+AT the start of a new terraform project we will run `terraform init` tp download the binaries for the terraform providers that we'll use in this project
+
+#### Terraform Plan 
+
+Creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure.
+
+We can output this changeset ie. "plan" to be passed to an "Terrrafrom apply" but often you can just ignore outputting.
+
+#### Terraform Apply 
+
+ Executes the actions proposed in a terraform plan.
+
+ If we want to automatically approve an apply we can provide the auto approve flag eg. `terraform apply --auto-approve`
+
+ ## Terraform Lock File
+
+ `/terraform.lock.file.hcl` contains the locked versioning for the providers or modulues that should be used with this project.
+
+ The terraform Lock File **should be committed** to your Version Control system (VSC) eg. Gitub
+
+### Terraform State Files
+
+ `.terraform.tfstate` contain infromation about the current state of your infrastructure. 
+
+ This file **should not be committed** tp your version contorl system (VSC) 
+
+This file can contain sensitive data. 
+
+if you lose this file, you lose knowing the state of your infrastructure.
+
+`.terraform.tfstate.bacjup` is the previous state file state. 
 
 
 
