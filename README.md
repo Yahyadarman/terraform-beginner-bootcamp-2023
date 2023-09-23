@@ -151,18 +151,22 @@ aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 We can check if our AWS creswntials is configured correctly by running the following AWS CLl command 
 
+
 ```sh
 aws sts get-caller-identity
 ```
 
 if it succesful you see json payload return that looks like this:
 
+```json
+{
  "UserId": "AIDAXI32RULOLOLOLOLOD",
     "Account": "88882120101",
     "Arn": "arn:aws:iam::818105557086:user/terraform9999"
-
-
-    We'll need to generate AWS CLI credits from IAM User in order to the user AWS CLI. 
 }
+```
+
+    We'll need to generate AWS CLI credits from IAM User in order to the user AWS CLI
+
 
 
