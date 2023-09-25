@@ -223,4 +223,77 @@ if you lose this file, you lose knowing the state of your infrastructure.
 `.terraform.tfstate.bacjup` is the previous state file state. 
 
 
+## Issue with Terraform Cloud Login and Gitpod Workspace
 
+When attempting to run terraform login it would launch bash a wiswig view to generate a token. However it does not work expexted in Gitpod  Vscode in the browser.
+
+The workaround is manually generate a token in Terraform Cloud 
+
+```
+https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-login
+```
+
+Once created then you run the command `terraform login`
+
+The **output** should be like this:
+
+```
+Terraform will request an API token for app.terraform.io using your browser.
+
+If login is successful, Terraform will store the token in plain text in
+the following file for use by subsequent commands:
+    /home/gitpod/.terraform.d/credentials.tfrc.json
+
+Do you want to proceed?
+  Only 'yes' will be accepted to confirm.
+
+  Enter a value: 
+
+```
+**Enter yes**
+
+The **output** will look like this:
+
+```
+Commands: Use arrow keys to move, '?' for help, 'q' to quit, '<-' to go back.
+```
+
+**Enter q**
+
+**The output**
+```
+Are you sure you want to quit? (y) 
+```
+
+**Enter y**
+
+**The output**
+```
+---------------------------------------------------------------------------------
+
+Terraform must now open a web browser to the tokens page for app.terraform.io.
+
+If a browser does not open this automatically, open the following URL to proceed:
+    https://app.terraform.io/app/settings/tokens?source=terraform-login
+
+
+---------------------------------------------------------------------------------
+
+Generate a token using your browser, and copy-paste it into this prompt.
+
+Terraform will store the token in plain text in the following file
+for use by subsequent commands:
+    /home/gitpod/.terraform.d/credentials.tfrc.json
+
+Token for app.terraform.io:
+  Enter a value: 
+```
+CTRL+C copy the token from Terraform cloud and CTRL+V yoyur token in **Enter a value** and hit enter
+
+***Important note*** You Will not be able to see what you have pasted sicne you typing confidential, or secure type values.
+
+You'll see the message:
+
+``` 
+You should successfully have entered your token, 
+```
