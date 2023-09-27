@@ -297,3 +297,8 @@ You'll see the message:
 ``` 
 You should successfully have entered your token, 
 ```
+
+We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
