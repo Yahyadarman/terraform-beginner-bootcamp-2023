@@ -1,5 +1,14 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of Contenst
+
+- [Semantic Versioning](#semantic-versioning-mage)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+- [Git Lifecycle (before, init, command)](#git-lifecycle-before-init-command)
+- [Working Env Var](#working-env-vars)
+- [Printing Vars](#printing-vars)
+- [Terraform Basics](#terraform-basics)
+- []
 ## Semantic Versioning :mage:
 
 This project is going to utilize semantic versioning for its tagging.
@@ -15,7 +24,7 @@ The general format:
 - **PATCH** PATCH version when you make backward compatible bug fixes
 
 ## Install the Terraform CLI
-The Terraform CLI installation instructions have changed due to gpg keyring changes. So we needed refer to the latest install CLI instructions via Terraform Documentation and change the scripting for install 
+The Terraform CLI installation instructions have changed due to gpg keyring changes. So we needed to refer to the latest install CLI instructions via Terraform documentation and change the scripting for install 
 
 [Install Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
